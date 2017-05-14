@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # coding: utf-8
 
+import random
+
+from utils import swap
+
 def perm(list, begin, end):
     if begin == end:
         printout_list = []
@@ -9,12 +13,11 @@ def perm(list, begin, end):
         print printout_list
     else:
         for i in range(begin, end+1):
-            swap(list, begin, i)
+            swap.swap(list, begin, i)
             #确定begin+1~end之间的排列组合
             perm(list, begin+1, end)
-            swap(list, begin, i)
+            swap.swap(list, begin, i)
 
-def swap(list, x, y):
-    tmp = list[x]
-    list[x] = list[y]
-    list[y] = tmp
+if __name__ == '__main__':
+    list = random.sample(range(100), 5)
+    perm(list, 0, len(list)-1)
