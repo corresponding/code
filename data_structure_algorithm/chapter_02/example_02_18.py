@@ -3,8 +3,6 @@
 
 import random
 
-from utils import swap
-
 def insert_sort(list):
     result = []
     for i in range(len(list)):
